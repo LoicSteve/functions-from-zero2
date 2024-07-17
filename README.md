@@ -9,3 +9,14 @@ A repo to learn functions
 * configure Github Codespaces or the equivalent (Cloud9, etc)
 * Create scaffold for structure of project: `Makefile` `requirements.txt`
 * Optional(setup virtualenv) (install ipython out of requirements.txt)
+
+## step 2: get interc ative debugging working
+
+* use IPython and ipdb
+
+```python
+x = 1
+y = 2
+#import ipdb; ipdb.set_trace()
+print(x+y)
+```
