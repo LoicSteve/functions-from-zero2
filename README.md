@@ -1,5 +1,8 @@
 [![Codespaces Prebuilds](https://github.com/LoicSteve/functions-from-zero2/actions/workflows/codespaces/create_codespaces_prebuilds/badge.svg)](https://github.com/LoicSteve/functions-from-zero2/actions/workflows/codespaces/create_codespaces_prebuilds)
 
+
+[![CI](https://github.com/LoicSteve/functions-from-zero2/actions/workflows/main.yml/badge.svg)](https://github.com/LoicSteve/functions-from-zero2/actions/workflows/main.yml)
+
 # functions-from-zero2
 A repo to learn functions
 
