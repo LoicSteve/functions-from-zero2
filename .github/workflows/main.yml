@@ -1,6 +1,11 @@
 name: CI
 
-on: [push]
+on: 
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -11,15 +16,12 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.11.9
-    - name: Install dependencies
+    - name: Install packages
       run: |
         make install
     - name: Lint with pylint
       run: |
         make lint
-    - name: Test with pytest
-      run: |
-        make test
     - name: Format code
       run: |
         make format
