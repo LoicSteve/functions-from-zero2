@@ -19,6 +19,7 @@ cities = {
     "San Jose": (37.3382, -121.8863),
 }
 
+
 # Build a function that calculates the distance between two cities
 def calculate_distance(city_name1, city_name2):
     return round(geopy_distance.distance(cities[city_name1], cities[city_name2]).km, 2)
@@ -34,6 +35,8 @@ def find_coordinates(city_name):
 
 
 find_coordinates("New York")
+
+
 # Calculate the total distance between a list of cities
 def calculate_total_distance(city_list):
     total_distance = 0
