@@ -2,6 +2,7 @@ from mylib.logistics import (
     calculate_distance,
     find_coordinates,
     calculate_total_distance,
+    calculate_travel_time,
 )
 
 
@@ -41,6 +42,11 @@ def test_calculate_total_distance():
         == 21737.389999999996
     )
     assert calculate_total_distance(["New York", "Los Angeles"]) == 3944.42
+
+def test_calculate_travel_time():
+    assert calculate_travel_time("New York", "Los Angeles") == 65.74
+    assert calculate_travel_time("New York", "Los Angeles", 100) == 39.44
+
 
 
 # write test for each command in logisticsCli.py

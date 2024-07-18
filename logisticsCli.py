@@ -3,6 +3,7 @@ from mylib.logistics import (
     calculate_distance,
     find_coordinates,
     calculate_total_distance,
+    calculate_travel_time,
 )
 import click
 
@@ -37,6 +38,15 @@ def calculate_total_distance_command(city_list):
         f"The total distance between the cities is {calculate_total_distance(city_list)} km"
     )
 
+@cli.command("calculate_travel_time")
+@click.argument("city1")
+@click.argument("city2")
+@click.option("--speed", default=60, help="average speed in km/h")
+def calculate_travel_time_command(city1, city2, speed):
+    """calculate the travel time between two cities"""
+    click.echo(
+        f"The travel time between {city1} and {city2} is {calculate_travel_time(city1, city2, speed)} hours"
+    )
 
 if __name__ == "__main__":
     cli()

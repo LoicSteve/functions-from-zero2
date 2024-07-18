@@ -36,3 +36,9 @@ def calculate_total_distance(city_list):
     for i in range(len(city_list) - 1):
         total_distance += calculate_distance(city_list[i], city_list[i + 1])
     return total_distance
+
+#estimate the travel time between two cities in car
+#assuming the average speed is 60km/h
+def calculate_travel_time(city1, city2, speed=60):
+    distance = calculate_distance(city1, city2)
+    return round(distance / speed, 2)
