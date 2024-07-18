@@ -13,7 +13,7 @@ A repo to learn functions
 * Create scaffold for structure of project: `Makefile` `requirements.txt`
 * Optional(setup virtualenv) (install ipython out of requirements.txt)
 
-## step 2: get interc ative debugging working
+## step 2: Get intercative debugging working
 
 * use IPython and ipdb
 
@@ -23,3 +23,5 @@ y = 2
 #import ipdb; ipdb.set_trace()
 print(x+y)
 ```
+
+## Step3: Build a library and use it

@@ -8,5 +8,3 @@ for i in fruits:
 
 # the total number of fruits in the list
 print(f"Total fruits in the list: {len(fruits)}")
-
-
