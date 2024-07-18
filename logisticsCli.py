@@ -4,6 +4,7 @@ from mylib.logistics import (
     find_coordinates,
     calculate_total_distance,
     calculate_travel_time,
+    cities_list,
 )
 import click
 
@@ -20,8 +21,14 @@ def calculate_distance_command(city1, city2):
     """calculate the distance between two cities"""
     click.echo(
         f"The distance between {city1} and {city2} is {calculate_distance(city1, city2)} km"
+
     )
 
+@cli.command("cities")
+def cities():
+    """list of cities
+    Example:python logisticsCli.py cities"""
+    click.echo(f"The list of cities are {cities_list()}")
 
 @cli.command("find_coordinates")
 @click.argument("city")

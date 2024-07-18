@@ -3,11 +3,26 @@ from mylib.logistics import (
     find_coordinates,
     calculate_total_distance,
     calculate_travel_time,
+    cities_list,
 )
 
 
 def test_calculate_distance():
     assert calculate_distance("New York", "Los Angeles") == 3944.42
+
+def test_cities_list():
+    assert cities_list() == [
+        "New York",
+        "Los Angeles",
+        "Chicago",
+        "Houston",
+        "Phoenix",
+        "Philadelphia",
+        "San Antonio",
+        "San Diego",
+        "Dallas",
+        "San Jose",
+    ]
 
 
 def test_find_coordinates():
@@ -61,6 +76,11 @@ def test_calculate_distance_command():
     assert (
         "The distance between New York and Los Angeles is 3944.42 km" in result.output
     )
+def test_cities_command():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["cities"])
+    assert result.exit_code == 0
+    assert "The list of cities are ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose']" in result.output
 
 
 def test_find_coordinates_command():

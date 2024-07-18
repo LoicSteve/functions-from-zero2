@@ -23,6 +23,9 @@ cities = {
 def calculate_distance(city_name1, city_name2):
     return round(geopy_distance.distance(cities[city_name1], cities[city_name2]).km, 2)
 
+def cities_list():
+    return [city[0] for city in cities.items()]
+
 
 # build a function that finds the coordinates(longitude and latitude) of a city
 def find_coordinates(city_name):
