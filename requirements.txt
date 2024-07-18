@@ -8,3 +8,4 @@ black
 wikipedia==1.4.0
 pydantic>=2.0
 ipdb
+geopy
