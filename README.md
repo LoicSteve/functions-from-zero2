@@ -4,7 +4,7 @@
 [![CI](https://github.com/LoicSteve/functions-from-zero2/actions/workflows/main.yml/badge.svg)](https://github.com/LoicSteve/functions-from-zero2/actions/workflows/main.yml)
 
 # functions-from-zero2
-A repo to learn functions
+A repo to learn functions.
 
 
 ## Step 1: Configure Development environment
