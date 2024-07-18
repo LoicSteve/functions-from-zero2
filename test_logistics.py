@@ -14,6 +14,7 @@ def test_calculate_distance():
 def test_cities_list():
     assert "New York" in cities_list()
 
+
 def test_find_coordinates():
     assert find_coordinates("New York") == (40.7128, -74.0060)
     assert find_coordinates("Los Angeles") == (34.0522, -118.2437)
