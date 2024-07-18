@@ -17,6 +17,9 @@ container-lint:
 refactor: format lint
 
 deploy:
-#echo "deploy not implemented"
+	aws ecr get-login-password --region eu-west-3 | docker login --username AWS --password-stdin 441525731509.dkr.ecr.eu-west-3.amazonaws.com
+	docker build -t logistics .
+	docker tag logistics:latest 441525731509.dkr.ecr.eu-west-3.amazonaws.com/logistics:latest
+	docker push 441525731509.dkr.ecr.eu-west-3.amazonaws.com/logistics:latest
 
 all: install format lint test deploy
