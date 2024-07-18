@@ -23,6 +23,7 @@ cities = {
 def calculate_distance(city_name1, city_name2):
     return round(geopy_distance.distance(cities[city_name1], cities[city_name2]).km, 2)
 
+
 def cities_list():
     return [city[0] for city in cities.items()]
 
@@ -40,8 +41,9 @@ def calculate_total_distance(city_list):
         total_distance += calculate_distance(city_list[i], city_list[i + 1])
     return total_distance
 
-#estimate the travel time between two cities in car
-#assuming the average speed is 60km/h
+
+# estimate the travel time between two cities in car
+# assuming the average speed is 60km/h
 def calculate_travel_time(city1, city2, speed=60):
     distance = calculate_distance(city1, city2)
     return round(distance / speed, 2)

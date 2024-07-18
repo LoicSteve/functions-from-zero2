@@ -21,14 +21,15 @@ def calculate_distance_command(city1, city2):
     """calculate the distance between two cities"""
     click.echo(
         f"The distance between {city1} and {city2} is {calculate_distance(city1, city2)} km"
-
     )
+
 
 @cli.command("cities")
 def cities():
     """list of cities
     Example:python logisticsCli.py cities"""
     click.echo(f"The list of cities are {cities_list()}")
+
 
 @cli.command("find_coordinates")
 @click.argument("city")
@@ -45,6 +46,7 @@ def calculate_total_distance_command(city_list):
         f"The total distance between the cities is {calculate_total_distance(city_list)} km"
     )
 
+
 @cli.command("calculate_travel_time")
 @click.argument("city1")
 @click.argument("city2")
@@ -54,6 +56,7 @@ def calculate_travel_time_command(city1, city2, speed):
     click.echo(
         f"The travel time between {city1} and {city2} is {calculate_travel_time(city1, city2, speed)} hours"
     )
+
 
 if __name__ == "__main__":
     cli()
