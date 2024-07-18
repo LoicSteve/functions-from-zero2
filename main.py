@@ -7,6 +7,7 @@ from mylib.logistics import (
     find_coordinates,
     calculate_travel_time,
 )
+from mylib.wiki import get_keywords
 
 app = FastAPI()
 
@@ -58,6 +59,12 @@ async def find_coordinates_post(city: City):
         "city": city.name,
         "coordinates": find_coordinates(city.name),
     }
+
+
+@app.post("/keywords")
+async def keywords(city: City):
+    """Return the keywords from a wikipedia page"""
+    return {"keywords": get_keywords(city.name)}
 
 
 if __name__ == "__main__":

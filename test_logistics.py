@@ -7,6 +7,9 @@ from mylib.logistics import (
 )
 from fastapi.testclient import TestClient
 from main import app
+from logisticsCli import cli
+from click.testing import CliRunner
+
 
 def test_calculate_distance():
     assert calculate_distance("New York", "Los Angeles") == 3944.42
@@ -56,10 +59,6 @@ def test_calculate_travel_time():
 
 
 # write test for each command in logisticsCli.py
-from logisticsCli import cli
-from click.testing import CliRunner
-
-
 def test_calculate_distance_command():
     runner = CliRunner()
     result = runner.invoke(cli, ["calculate_distance", "New York", "Los Angeles"])
@@ -111,7 +110,7 @@ def test_calculate_total_distance_command():
     )
 
 
-#build a test for the cities endpoint
+# build a test for the cities endpoint
 def test_cities_endpoint():
     with TestClient(app) as client:
         response = client.get("/cities")
@@ -130,11 +129,14 @@ def test_cities_endpoint():
                 "San Jose",
             ]
         }
-#build a test for the distance endpoint
+
+
+# build a test for the distance endpoint
 def test_calculate_distance_post():
     with TestClient(app) as client:
         response = client.post(
-            "/distance", json={"city1": {"name": "New York"}, "city2": {"name": "Los Angeles"}}
+            "/distance",
+            json={"city1": {"name": "New York"}, "city2": {"name": "Los Angeles"}},
         )
         assert response.status_code == 200
         assert response.json() == {
@@ -142,7 +144,9 @@ def test_calculate_distance_post():
             "city2": "Los Angeles",
             "distance": 3944.42,
         }
-#build a test for the travel_time endpoint
+
+
+# build a test for the travel_time endpoint
 def test_calculate_travel_time_post():
     with TestClient(app) as client:
         response = client.post(
